@@ -1,0 +1,10 @@
+def welcome_message():
+    print('')
+    print(' -------------------------------------')
+    print(' |                                   |')
+    print(' |       CBPM TOY MONTE CARLO        |')
+    print(' |                                   |')
+    print(' |    contact: atc93@cornell.edu     |')
+    print(' |                                   |')
+    print(' -------------------------------------')
+    print('')

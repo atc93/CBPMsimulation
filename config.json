@@ -1,0 +1,68 @@
+{
+
+        ###==================================================================###
+        ###=== Configuration file for the CBPM toy Monte Carlo simulation ===###
+        ###==================================================================###
+
+        ##== General paramters ==##
+        
+        # Name of the output data file
+        "output_file_name":"toymc.dat",
+        # Print-out verbose
+        "verbose":0,
+        # Number of simulated turns
+        "n_turns":131072,
+        # Frequency of the sine waveform used as button response
+        "frequency": 540e6,
+        # Horizontal geometrical factor
+        "kx":25.9,
+        # Vertical geometrical factor
+        "ky":19.8,
+        # List of CBPM names to simulate
+        "cbpm": "12W2 12W3 12W",
+
+        ##== Various switches ==##
+
+        # Electronic noise, set to true to apply
+        "apply_noise": true,
+        # Timing jitter, set to true to apply
+        "apply_timing_jitter":true,
+        # Timing offset, set to true to apply
+        "apply_timing_offset":true,
+        # To correlate the timing jitter between the 4 buttons, set to true
+        "timing_jitter_correlated": false,
+
+        ##== Per CBPM configuration ==##
+
+        # Initial horizontal position at each CBPM [mm]
+        "x_pos":[0, 0, 0],
+        # Initial vertical position at each CBPM [mm]
+        "y_pos":[0, 0, 0],
+        # Horizontal drift over the total number of turns [mm]
+        "x_drift":[1, 1, 1],
+        # Vertical drift over the total number of turns [mm]
+        "y_drift":[1, 1, 1],
+        # Standard deviation(s) of the horizontal modulation(s) [mm]
+        "x_modulation_std":[1,1,1, 3,3,3],
+        # Standard deviation(s) of the vertical modulation(s) [mm]
+        "y_modulation_std":[0,0,0],
+        # Frequency(ies) of the horizontal modulation(s) [Hz]
+        "x_modulation_freq":[60,60,60, 20e3,20e3,20e3],
+        # Frequency(ies) of the vertical modulation(s) [Hz]
+        "y_modulation_freq":[0,0,0],
+        # Reference amplitude of the button analog waveforms [ADU]
+        "amplitude": [8192, 16384, 16384],
+        # Timing jitter common to all the buttons in one CBPM (correlated jitter) [ps]
+        # Requires the 'timing_jitter_correlated' switch to be turned on
+        "corr_timing_jitter": [1, 1, 1],
+
+        ##== Per button configuration ==##
+
+        # Timing offset [ps]
+        "timing_offset":        [10,10,10,10, 10,10,10,10, 10,10,10,10],
+        # Uncorrelated timing jitters for the individual buttons [ps]
+        "uncorr_timing_jitter": [10,10,10,10, 10,10,10,10, 10,10,10,10],
+        # Electronic noise [ADU]
+        "noise": [9,9,9,9, 9,9,9,9, 9,9,9,9]
+
+}
